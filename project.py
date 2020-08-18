@@ -30,4 +30,16 @@ def update_list():
         todolist.delete(0, "end")
     for task in tasks:
         todolist.insert("end", "[" + task[0] + "] Due Date: " + str[task[1] + " second"]
-        
+
+def time_passed(task):
+    tkinter.messagebox.showinfo("Reminder", "Time for: " + task)
+
+def real_time():
+    if ok_thread:
+        real_timer = threading.Timer(1.0, real_time)
+        real_timer.start()
+    for task in tasks:
+        if task[1] == 0:
+            tasks.remove(task)
+        task[1] -= 1
+    update_list()

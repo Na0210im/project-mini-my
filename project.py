@@ -43,3 +43,12 @@ def real_time():
             tasks.remove(task)
         task[1] -= 1
     update_list()
+
+if __name__ == '__main__':
+    app = tkinter.Tk()
+    app.geometry("480x680")
+    app.title("Student To Do List")
+    app.rowconfigure(0, weight = 1)
+
+    frame = tkinter.Frame(app)
+    frame.pack()

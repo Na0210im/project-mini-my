@@ -63,3 +63,6 @@ if __name__ == '__main__':
     todolist = tkinter.Listbox(app)
     if tasks != "":
         real_time()
+        
+ # binding
+    app.bind('<Return>', get_entry)

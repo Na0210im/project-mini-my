@@ -74,3 +74,7 @@ time.place(x = 275, y = 30, width = 150, height = 25)
 send.place(x = 62, y = 60, width = 70, height = 25)
 quit.place(x = 302, y = 60, width = 50, height = 25)
 todolist.place(x = 60, y = 100, width = 300, height = 300)
+
+ app.mainloop()
+    ok_thread = False
+    sys.exit("FINISHED")

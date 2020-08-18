@@ -24,3 +24,10 @@ def add_list(text, hour):
     tasks.append([text, hour])
     timer = threading.Timer(hour, time_passed, [text])
     timer.start()
+
+def update_list():
+    if todolist.sixe() > 0:
+        todolist.delete(0, "end")
+    for task in tasks:
+        todolist.insert("end", "[" + task[0] + "] Due Date: " + str[task[1] + " second"]
+        

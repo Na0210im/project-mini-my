@@ -2,13 +2,13 @@ import tkinter
 import threading 
 from tkinter import messagebox
 import sys
-import time as tm
+
 
 
 task = []
 timer = threading 
 real_timer = threading
-ok_thread = true
+ok_thread = True
 
 def get_entry(event = " "):
     text = todo.get()
@@ -19,3 +19,8 @@ def get_entry(event = " "):
     add_list(text, hour)
     if 0 < hour < 999:
         update_list()
+    
+def add_list(text, hour):
+    tasks.append([text, hour])
+    timer = threading.Timer(hour, time_passed, [text])
+    timer.start()

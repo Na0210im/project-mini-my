@@ -52,3 +52,14 @@ if __name__ == '__main__':
 
     frame = tkinter.Frame(app)
     frame.pack()
+
+# widgets
+    label = tkinter.Label(app, text="Enter work to do", wraplength = 200, justify = tkinter.LEFT)
+    label_hour = tkinter.Label(app, text="Enter time", wraplength = 250, justify = tkinter.LEFT)
+    todo = tkinter.Entry(app, width = 60)
+    time = tkinter.Entry(app, width = 60)
+    send = tkinter.Button(app, text='Add task', fg="#ffffff", bg='#6186AC', height=3, width=30, command=get_entry)
+    quit = tkinter.Button(app, text='Exit', fg="#ffffff", bg='#EB6464', height=3, width=30, command=app.destroy)
+    todolist = tkinter.Listbox(app)
+    if tasks != "":
+        real_time()

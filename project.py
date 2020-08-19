@@ -2,7 +2,7 @@ import tkinter
 import threading 
 from tkinter import messagebox
 import sys
-
+import time as tm
 
 
 task = []
@@ -26,10 +26,10 @@ def add_list(text, hour):
     timer.start()
 
 def update_list():
-    if todolist.sixe() > 0:
+    if todolist.size() > 0:
         todolist.delete(0, "end")
     for task in tasks:
-        todolist.insert("end", "[" + task[0] + "] Due Date: " + str[task[1] + " second"]
+        todolist.insert("end", "[" + task[0] + "] Due Date: " + str(task[1]) + " second")
 
 def time_passed(task):
     tkinter.messagebox.showinfo("Reminder", "Time for: " + task)
@@ -64,7 +64,7 @@ todolist = tkinter.Listbox(app)
 if tasks != "":
      real_time()
         
- # binding
+# binding
 app.bind('<Return>', get_entry)
 
 label.place(x = 0, y = 10, width = 200, height = 25)
@@ -75,6 +75,6 @@ send.place(x = 62, y = 60, width = 70, height = 25)
 quit.place(x = 302, y = 60, width = 50, height = 25)
 todolist.place(x = 60, y = 100, width = 300, height = 300)
 
- app.mainloop()
-    ok_thread = False
-    sys.exit("FINISHED")
+app.mainloop()
+ok_thread = False
+sys.exit("FINISHED")

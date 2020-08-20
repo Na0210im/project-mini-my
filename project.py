@@ -2,7 +2,6 @@ import tkinter
 import threading
 from tkinter import messagebox
 import sys
-import time as tm 
 
 
 tasks = []
@@ -32,11 +31,11 @@ def update_list():
     if todolist.size() > 0:
         todolist.delete(0, "end")
     for task in tasks:
-        todolist.insert("end", "[" + task[0] + "] Time left: " + str(task[1]) + " second")
+        todolist.insert("end", "●" + task[0] + " ------> Due Date On: " + str(task[1]) + " ")
 
 
 def time_passed(task):
-    tkinter.messagebox.showinfo("Reminder", "Time for: " + task)
+    tkinter.messagebox.showinfo("Reminder", " " + task)
 
 
 def real_time():
@@ -51,23 +50,24 @@ def real_time():
 
 
 if __name__ == '__main__':
+
     # application
     app = tkinter.Tk()
-    app.geometry("480x680")
+    app.geometry("480x480")
     app.title("Student To Do List")
-    app.rowconfigure(0, weight=1)
+    app.rowconfigure(150, weight=15)
 
     # fenetre
     frame = tkinter.Frame(app)
     frame.pack()
 
     # widgets
-    label = tkinter.Label(app, text="Enter work to do", wraplength = 200, justify = tkinter.LEFT)
-    label_hour = tkinter.Label(app, text="Enter time", wraplength = 250, justify = tkinter.LEFT)
+    label = tkinter.Label(app, text="ENTER WORK TO DO", font = ("times", 10, "bold"), wraplength = 200, justify = tkinter.LEFT)
+    label_hour = tkinter.Label(app, text="DATE & TIME", font = ("times", 10, "bold"), wraplength = 250, justify = tkinter.LEFT)
     todo = tkinter.Entry(app, width = 60)
     time = tkinter.Entry(app, width = 60)
-    send = tkinter.Button(app, text='Add task', fg="#ffffff", bg='#6186AC', height=3, width=30, command=get_entry)
-    quit = tkinter.Button(app, text='Exit', fg="#ffffff", bg='#EB6464', height=3, width=30, command=app.destroy)
+    send = tkinter.Button(app, text='Add task', font = ("times", 12, "bold"), fg="#ffffff", bg='#6186AC', height=3, width=30, command=get_entry)
+    quit = tkinter.Button(app, text='Exit', font = ("times", 12, "bold"), fg="#ffffff", bg='#EB6464', height=3, width=30, command=app.destroy)
     todolist = tkinter.Listbox(app)
     if tasks != "":
         real_time()
@@ -76,11 +76,11 @@ if __name__ == '__main__':
     app.bind('<Return>', get_entry)
     
     # widgets placement
-    label.place(x=0, y=10, width=200, height=25)
-    label_hour.place(x=235, y=10, width=200, height=25)
+    label.place(x=55, y=10, width=200, height=25)
+    label_hour.place(x=260, y=10, width=200, height=25)
     todo.place(x=52, y=30, width=200, height=25)
-    time.place(x=275, y=30, width=150, height=25)
-    send.place(x=62, y=60, width=50, height=25)
+    time.place(x=285, y=30, width=150, height=25)
+    send.place(x=110, y=60, width=70, height=25)
     quit.place(x=302, y=60, width=50, height=25)
     todolist.place(x=60, y = 100, width=300, height=300)
 

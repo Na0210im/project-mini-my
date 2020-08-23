@@ -56,7 +56,7 @@ if __name__ == '__main__':
     app = tkinter.Tk()
     app.geometry("480x480")
     app.title("Student To Do List")
-    app.rowconfigure(150, weight=15)
+    app.rowconfigure(151, weight=15)
 
     # fenetre
     frame = tkinter.Frame(app)

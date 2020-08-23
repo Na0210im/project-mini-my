@@ -31,7 +31,7 @@ def update_list():
     if todolist.size() > 0:
         todolist.delete(0, "end")
     for task in tasks:
-        todolist.insert("end", "●" + task[0] + " ------> Due Date On: " + str(task[1]) + " ")
+        todolist.insert("end", "●" + task[0] + " ------> Due On: " + str(task[1]) + " ")
 
 
 def time_passed(task):
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     # widgets
     label = tkinter.Label(app, text="ENTER WORK TO DO", font = ("times", 10, "bold"), wraplength = 200, justify = tkinter.LEFT)
-    label_hour = tkinter.Label(app, text="DATE & TIME", font = ("times", 10, "bold"), wraplength = 250, justify = tkinter.LEFT)
+    label_hour = tkinter.Label(app, text="TIME", font = ("times", 10, "bold"), wraplength = 250, justify = tkinter.LEFT)
     todo = tkinter.Entry(app, width = 60)
     time = tkinter.Entry(app, width = 60)
     send = tkinter.Button(app, text='Add task', font = ("times", 12, "bold"), fg="#ffffff", bg='#6186AC', height=3, width=30, command=get_entry)
